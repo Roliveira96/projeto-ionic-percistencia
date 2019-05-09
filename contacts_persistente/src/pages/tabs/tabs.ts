@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { ContactsListPage } from '../contacts-list/contacts-list';
-import { CreateContactPage } from '../create-contact/create-contact’;
+import { CreateContactPage } from '../create-contact/create-contact';
 
 import { HomePage } from '../home/home';
 

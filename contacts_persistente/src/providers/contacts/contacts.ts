@@ -8,6 +8,7 @@ export class ContactsProvider {
 
   constructor(public storage: Storage) {
     console.log('Hello ContactsProvider Provider');
+
   }
 
 
@@ -20,8 +21,20 @@ export class ContactsProvider {
     return this.getContacts().then(result => {
       if (result) {
         data['id'] = result.length + 1;
-        result.push(data);
-        return this.storage.set(STORAGE_KEY, result);
+
+        if(this.procuraContato(result,data)) {
+          console.log('Deu certo o contato está sendo salvo');
+          result.push(data);
+
+          return this.storage.set(STORAGE_KEY, result);
+        }else{
+          console.log('Deu certo o contato NÂO está sendo salvo');
+
+          return Promise.reject('Nome existente!');
+
+
+        }
+
       } else {
         data['id'] = 1;
         return this.storage.set(STORAGE_KEY, [data]);
@@ -29,5 +42,15 @@ export class ContactsProvider {
     });
   }
 
+
+  procuraContato(array , contato) {
+    for (let i = 0; i < array.length ; i++) {
+      if (contato['name'] == array[i]['name'])
+        return false;
+
+    }
+    return true;
+
+  }
 
 }
