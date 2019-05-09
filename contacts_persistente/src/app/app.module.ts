@@ -1,15 +1,18 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage';
 import { MyApp } from './app.component';
 
-import { IonicStorageModule } from '@ionic/storage';
 
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { ContactsListPage } from '../pages/contacts-list/contacts-list';
+
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,6 +24,7 @@ import { ContactsProvider } from '../providers/contacts/contacts';
     AboutPage,
     ContactPage,
     HomePage,
+    ContactsListPage,
     TabsPage,
   ],
   imports: [
@@ -34,6 +38,7 @@ import { ContactsProvider } from '../providers/contacts/contacts';
     AboutPage,
     ContactPage,
     HomePage,
+    ContactsListPage,
     TabsPage
   ],
   providers: [
