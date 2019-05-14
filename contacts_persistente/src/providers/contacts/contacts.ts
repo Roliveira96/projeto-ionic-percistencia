@@ -16,6 +16,15 @@ export class ContactsProvider {
     return this.storage.get(STORAGE_KEY);
   }
 
+  getContact(id){
+    console.log('Dentro do getContact');
+
+  return   this.getContacts().then(result =>{
+      console.log('Teste do getContaxts --> ' + result[id]);
+      return result[id];
+    }).catch(      erro => {console.log("error") }    );
+  }
+
 
   addContact(data){
     return this.getContacts().then(result => {
@@ -31,7 +40,6 @@ export class ContactsProvider {
           console.log('Deu certo o contato NÂO está sendo salvo');
 
           return Promise.reject('Nome existente!');
-
 
         }
 
