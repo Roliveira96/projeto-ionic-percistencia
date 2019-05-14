@@ -50,7 +50,7 @@ export class ContactsProvider {
     });
   }
 
-
+//verefica se o contato ja existe
   procuraContato(array , contato) {
     for (let i = 0; i < array.length ; i++) {
       if (contato['name'] == array[i]['name'])
