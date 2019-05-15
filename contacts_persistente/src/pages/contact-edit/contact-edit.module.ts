@@ -13,5 +13,5 @@ import { ContactEditPage } from './contact-edit';
 export class ContactEditPageModule {
 
 
-  
+
 }

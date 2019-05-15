@@ -11,5 +11,13 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Nome</ion-label>
+      <ion-input type="text" name="name"
+                 [(ngModel)]="model.name"></ion-input>
+    </ion-item>
+  </ion-list>
 
+  <button ion-button block color="primary" (click)="saveContact()">Salvar</button>
 </ion-content>

@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
+import { ContactsProvider } from '../../providers/contacts/contacts';
 
-/**
- * Generated class for the ContactEditPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -14,12 +9,39 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'contact-edit.html',
 })
 export class ContactEditPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  model: Contact;
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private toast: ToastController,
+    private contactProvider: ContactsProvider
+  ){
+    if (this.navParams.data.contact) {
+      this.model = this.navParams.data.contact;
+    } else {
+      this.model = new Contact();
+    }
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContactEditPage');
   }
 
+  saveContact() {
+    console.log('Dentro do saveContact');
+    this.contactProvider.updateContact(this.model.id, this.model)
+      .then((result: any) => {
+        this.toast.create({ message: 'Usuário salvo' , duration : 1000}).present();
+        this.navCtrl.pop();
+      })
+      .catch((error: any) => {
+        this.toast.create({ message: error.error , duration : 1000 }).present();
+      });
+  }
+
+}
+export class Contact {
+  id: number;
+  name: string;
+  gender: string;
 }

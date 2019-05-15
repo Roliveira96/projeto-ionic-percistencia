@@ -22,7 +22,7 @@ export class ContactsProvider {
 
     id = id -1;
   return   this.getContacts().then(result =>{
-      console.log('Teste do getContaxts --> ' + result[id]);
+      console.log('Teste do getContacts --> ' + result[id]['name']);
       return result[id];
     }).catch(      erro => {console.log("error o contato não foi localizado! Ou ocorreu um erro interno") }    );
   }
@@ -33,7 +33,7 @@ export class ContactsProvider {
       if (result) {
         data['id'] = result.length + 1;
 
-        if(this.procuraContato(result,data)) {
+        if(!this.procuraContato(result,data)) {
           console.log('Deu certo o contato está sendo salvo');
           result.push(data);
 
@@ -91,7 +91,7 @@ export class ContactsProvider {
     });
   }
 
-  updateContact(id: number){
+  updateContact(id: number, contact : Contact){
 
   console.log("Dentro do updateContact  --> id: " + id);
 
@@ -104,6 +104,11 @@ export class ContactsProvider {
         console.log('<------------ Teste implementação --------------->');
 
         console.log('O contato a ser editado é : '+ result[id]['name']);
+        console.log('O contato a ser editado é : '+ contact['name']);
+        if (this.procuraContato(result,contact) ){
+          console.log('teste');
+        }
+
 
 
         console.log('<------------ Teste implementação --------------->');
@@ -120,11 +125,15 @@ export class ContactsProvider {
   procuraContato(array , contato) {
     for (let i = 0; i < array.length ; i++) {
       if (contato['name'] == array[i]['name'])
-        return false;
-
+        return true;
     }
-    return true;
+    return false;
 
   }
 
+}
+export class Contact {
+  id: number;
+  name: string;
+  gender: string;
 }
