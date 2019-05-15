@@ -10,4 +10,8 @@ import { ContactEditPage } from './contact-edit';
     IonicPageModule.forChild(ContactEditPage),
   ],
 })
-export class ContactEditPageModule {}
+export class ContactEditPageModule {
+
+
+  
+}
