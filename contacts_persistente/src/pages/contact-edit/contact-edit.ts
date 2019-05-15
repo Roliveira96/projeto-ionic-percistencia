@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angul
 import { ContactsProvider } from '../../providers/contacts/contacts';
 
 
+// @ts-ignore
 @IonicPage()
 @Component({
   selector: 'page-contact-edit',
@@ -32,9 +33,8 @@ export class ContactEditPage {
     this.contactProvider.updateContact(this.model.id, this.model)
       .then((result: any) => {
         this.toast.create({ message: 'Usuário salvo' , duration : 1000}).present();
-        this.navCtrl.pop();
-      })
-      .catch((error: any) => {
+     //   this.navCtrl.pop();
+      }).catch((error: any) => {
         this.toast.create({ message: error.error , duration : 1000 }).present();
       });
   }

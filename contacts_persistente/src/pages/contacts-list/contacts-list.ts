@@ -18,6 +18,19 @@ export class ContactsListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContactsListPage');
+    this.getContacts();
+
+  }
+
+  ionViewWillEnter(){
+    console.log('ionViewWillEnter ContactsListPage');
+    this.getContacts();
+
+  }
+  ionViewDidEnter(){
+    console.log('ionViewDidEnter ContactsListPage');
+  //  this.getContacts();
+
   }
 
   getContacts() {
@@ -44,10 +57,13 @@ export class ContactsListPage {
     this.contactsProvider.destroyContact(contact.id)
       .then((result: any) => {
         this.toast.create({ message: 'Excluído!', duration: 1000 }).present();
+        this.ionViewWillEnter();
       })
       .catch((error: any) => {
         this.toast.create({ message: error.error }).present();
       });
+
+
   }
   openEditContact(id: number) {
     this.contactsProvider.getContact(id)
