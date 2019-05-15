@@ -43,7 +43,12 @@ export class ContactEditPage {
 
 }
 export class Contact {
-  id: number;
+  id;
   name: string;
   gender: string;
+  birthday: string;
+  employed: boolean;
+  salary: string;
+  photo: string;
+
 }

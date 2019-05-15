@@ -35,7 +35,7 @@ export class ContactsProvider {
 
 
   addContact(data) {
-     this.getContacts().then(result => {
+   return  this.getContacts().then(result => {
       if (result) {
         data['id'] = result.length + 1;
 
@@ -163,7 +163,11 @@ export class ContactsProvider {
 }
 
 export class Contact {
-  id: number;
   name: string;
   gender: string;
+  birthday: string;
+  employed: boolean;
+  salary: string;
+  photo: string;
+
 }

@@ -15,10 +15,16 @@
   <ion-list inset>
 
 
+
+
+
     <ion-item-sliding *ngFor="let contact of contacts" >
       <ion-item (click)="openContact(contact.id)">
         <h2>{{contact.name}}</h2>
         <p>{{contact.gender}}</p>
+        <img src="{{contact.photo}}" width="100" >
+        <br>
+
       </ion-item>
 
       <ion-item-options side="left">

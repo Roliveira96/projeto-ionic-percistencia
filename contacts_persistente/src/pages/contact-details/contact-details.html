@@ -15,8 +15,15 @@
 
     <div *ngIf="contact" text-center>
       <ion-item>
-        <h2>{{contact.name}}</h2>
-        <p>{{contact.gender}}</p>
+
+        <img src="{{contact.photo}}" width="100" >
+
+        <h2>Nome: {{contact.name}}</h2>
+        <p>Sexo: {{contact.gender}}</p>
+        <p>Data de nascimento {{contact.birthday}}</p>
+        <p>Está trabalhando? {{contact.employed}}</p>
+        <p>Salario: {{contact.salary}}</p>
+        <small>Foto em base64: {{contact.photo}}</small>
       </ion-item>
     </div>
 

@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>create-contact</ion-title>
+    <ion-title>Cadastro de contato</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -21,8 +21,22 @@
 
       <ion-item>
         <ion-label stacked>Gender</ion-label>
-        <ion-input type="text" name="gender" [(ngModel)]="model.gender"></ion-input>
+        <ion-input type="select" name="gender" [(ngModel)]="model.gender"></ion-input>
       </ion-item>
+
+
+    <ion-item>
+        <ion-label stacked>Salario</ion-label>
+        <ion-input type="text" name="gender" [(ngModel)]="model.salary"></ion-input>
+      </ion-item>
+
+
+
+    <ion-item>
+      <ion-label stacked>Img</ion-label>
+      <ion-input type="text" name="salary" [(ngModel)]="model.photo"></ion-input>
+    </ion-item>
+
   </ion-list>
   <button ion-button block (click)="createContact()">Criar contato</button>
 
