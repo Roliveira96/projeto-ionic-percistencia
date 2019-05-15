@@ -4,7 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
 import { MyApp } from './app.component';
 
-
+import { Camera } from '@ionic-native/camera';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -49,7 +49,8 @@ import { ContactsProvider } from '../providers/contacts/contacts';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ContactsProvider
+    ContactsProvider,
+    Camera
   ]
 })
 export class AppModule {}

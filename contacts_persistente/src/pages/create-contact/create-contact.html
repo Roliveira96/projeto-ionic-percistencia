@@ -13,6 +13,7 @@
 <ion-content padding>
 
   <ion-list>
+    <img src="{{ photo }}" />
       <ion-item>
         <ion-label stacked>Name</ion-label>
         <ion-input type="text" name="name" [(ngModel)]="model.name"></ion-input>
@@ -25,4 +26,16 @@
   </ion-list>
   <button ion-button block (click)="createContact()">Criar contato</button>
 
+
+
+
+
 </ion-content>
+
+
+
+<ion-footer padding>
+  <button ion-button large block (click)="takePicture()">
+    Câmera
+  </button>
+</ion-footer>

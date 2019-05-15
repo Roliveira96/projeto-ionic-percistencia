@@ -35,7 +35,7 @@ export class ContactsProvider {
 
 
   addContact(data) {
-    return this.getContacts().then(result => {
+     this.getContacts().then(result => {
       if (result) {
         data['id'] = result.length + 1;
 
@@ -46,8 +46,6 @@ export class ContactsProvider {
           return this.storage.set(STORAGE_KEY, result);
         } else {
           console.log('Não deu certo o contato NÂO está sendo salvo');
-
-          return Promise.reject('error');
 
         }
 
@@ -95,15 +93,15 @@ export class ContactsProvider {
       id = this.procuraContatoRtIndex(result, id)
       if (result) {
 
-        console.log('<------------ Teste implementação --------------->');
-
-        console.log('O contato a ser editado é : ' + result[id]['name']);
-        console.log('O contato a ser editado é : ' + result[id]['id']);
-        console.log('O contato que vai ser salvo : ' + contact['name']);
-        console.log('O contato que vai ser salvo: ' + contact['id']);
-        console.log('index: ' + this.procuraContatoByName(result, contact['name']));
-        console.log('Id : ' + id);
-
+        // console.log('<------------ Teste implementação --------------->');
+        //
+        // console.log('O contato a ser editado é : ' + result[id]['name']);
+        // console.log('O contato a ser editado é : ' + result[id]['id']);
+        // console.log('O contato que vai ser salvo : ' + contact['name']);
+        // console.log('O contato que vai ser salvo: ' + contact['id']);
+        // console.log('index: ' + this.procuraContatoByName(result, contact['name']));
+        // console.log('Id : ' + id);
+        //
 
         if (this.procuraContato(result, contact)) {
           console.log('dentro do 1° if');
@@ -118,7 +116,7 @@ export class ContactsProvider {
 
           } else {
             console.log('dentro do else');
-            return  Promise.reject('error');
+            return  null;
           }
 
         }else{
@@ -128,9 +126,9 @@ export class ContactsProvider {
           result[id]['gender'] = contact['gender'];
           return this.storage.set(STORAGE_KEY, result);
         }
-        
+
       }
-      return Promise.reject('error');
+
     });
   }
 

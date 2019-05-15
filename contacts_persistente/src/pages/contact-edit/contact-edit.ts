@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
-import { ContactsProvider } from '../../providers/contacts/contacts';
+import {ContactsProvider} from '../../providers/contacts/contacts';
+import {ContactsListPage} from "../contacts-list/contacts-list";
 
 
 // @ts-ignore
@@ -26,6 +27,7 @@ export class ContactEditPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContactEditPage');
+
   }
 
   saveContact() {
@@ -33,10 +35,10 @@ export class ContactEditPage {
     this.contactProvider.updateContact(this.model.id, this.model)
       .then((result: any) => {
         this.toast.create({ message: 'Usuário salvo' , duration : 1000}).present();
-     //   this.navCtrl.pop();
       }).catch((error: any) => {
         this.toast.create({ message: error.error , duration : 1000 }).present();
       });
+
   }
 
 }
