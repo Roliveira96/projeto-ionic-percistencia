@@ -40,7 +40,7 @@ export  class CreateContactPage {
         'birthday': this.model.birthday,
         'employed': this.model.employed,
         'salary': this.model.salary,
-        'photo': this.model.photo
+        'photo': this.photo
 
     };
 
