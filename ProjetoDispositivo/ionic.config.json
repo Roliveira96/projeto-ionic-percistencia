@@ -1,0 +1,7 @@
+{
+  "name": "ProjetoDispositivo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

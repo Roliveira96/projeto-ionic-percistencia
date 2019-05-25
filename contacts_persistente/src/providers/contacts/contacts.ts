@@ -116,7 +116,7 @@ export class ContactsProvider {
 
           } else {
             console.log('dentro do else');
-            return  null;
+            return  Promise.reject('error');
           }
 
         }else{

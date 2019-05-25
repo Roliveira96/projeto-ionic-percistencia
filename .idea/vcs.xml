@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/contacts_persistente" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/dis.mov" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/dis_mov" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/teste-ionic" vcs="Git" />
   </component>
 </project>
